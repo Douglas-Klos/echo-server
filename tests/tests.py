@@ -1,6 +1,6 @@
-from echo_client import client
 import socket
 import unittest
+from echo_client import client
 
 
 class EchoTestCase(unittest.TestCase):

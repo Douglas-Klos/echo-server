@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+""" Echo server.  Awaits for connection, and replies with what it receives """
+#pylint: disable=W0703, R1702
+
+
 import socket
 import sys
 import traceback
@@ -32,7 +36,7 @@ def server(log_buffer=sys.stderr):
                     conn.sendall(data)
                     print('sent "{0}"'.format(data.decode('utf8')))
 
-            except Exception as e:
+            except Exception:
                 traceback.print_exc()
                 sys.exit(1)
             finally:
@@ -46,6 +50,7 @@ def server(log_buffer=sys.stderr):
 
 
 def main():
+    """ REEEEEEEEEEEEEEEEEE """
     server()
     sys.exit(0)
 

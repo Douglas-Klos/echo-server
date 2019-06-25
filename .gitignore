@@ -54,6 +54,7 @@ Temporary Items
 
 ## Every single assignment so far has come with its own, unique .gitignore...
 
+__pycache__
 .vscode
 douglas-klos.assignment.2.zip
 venv

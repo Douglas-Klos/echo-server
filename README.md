@@ -1,3 +1,8 @@
+# Lesson 2 assignment
+
+* Completed required tasks (echo server and client)
+* Completed optional task, determine service by port.  I wrote a seperate script for this, service_by_port.py.  Accepts a start and end value from the cli as a range to scan. Simple really.
+
 Echo Server Homework
 ==================
 

@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
+""" echo server tests """
+#pylint: disable=C0103
 import socket
 import unittest
+from time import sleep
 from echo_client import client
+
+
 
 
 class EchoTestCase(unittest.TestCase):
@@ -24,6 +29,7 @@ class EchoTestCase(unittest.TestCase):
 
     def test_short_message_echo(self):
         """test that a message short than 16 bytes echoes cleanly"""
+        sleep(.01)
         expected = "short message"
         actual = self.send_message(expected)
         self.assertEqual(
@@ -34,6 +40,7 @@ class EchoTestCase(unittest.TestCase):
 
     def test_long_message_echo(self):
         """test that a message longer than 16 bytes echoes in 16-byte chunks"""
+        sleep(.01)
         expected = "Four score and seven years ago our fathers did stuff"
         actual = self.send_message(expected)
         self.assertEqual(

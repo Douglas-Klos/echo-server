@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
+""" Echo client.  Sends string from command line and prints stream """
+
 import socket
 import sys
 import traceback
 
 
 def client(msg, log_buffer=sys.stderr):
+    """ Sends message to server and prints reply """
     server_address = ('127.0.0.1', 10000)
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP)
     sock.connect(server_address)
@@ -22,16 +25,19 @@ def client(msg, log_buffer=sys.stderr):
             print('received "{0}"'.format(chunk.decode('utf8')), file=log_buffer)
             received_message += chunk.decode('utf8')
 
-    except Exception as e:
+    #pylint: disable=W0703
+    except Exception:
         traceback.print_exc()
         sys.exit(1)
     finally:
         sock.close()
         print('closing socket', file=log_buffer)
-        return received_message
+
+    return received_message
 
 
 def main():
+    """ We Wuz Main """
     if len(sys.argv) != 2:
         usage = '\nusage: python echo_client.py "this is my message"\n'
         print(usage, file=sys.stderr)

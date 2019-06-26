@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-""" Echo client.  Sends string from command line and prints stream """
+#pylint: disable=W0703
+"""
+    Echo client.  Sends string from command line and prints stream.
+    The outline for this was already completed for us.  We just had to fill in the TODO
+    sections.  Takes a lot of the challange and thinking out of the assignment.
+    I deleted all the instructor comments, they were cluttering up my screen.
+"""
 
 import socket
 import sys
@@ -25,7 +31,6 @@ def client(msg, log_buffer=sys.stderr):
             print('received "{0}"'.format(chunk.decode('utf8')), file=log_buffer)
             received_message += chunk.decode('utf8')
 
-    #pylint: disable=W0703
     except Exception:
         traceback.print_exc()
         sys.exit(1)

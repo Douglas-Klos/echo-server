@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
-""" Echo server.  Awaits for connection, and replies with what it receives """
 #pylint: disable=W0703, R1702
-
+"""
+    Echo server.  Awaits for connection, and replies with what it receives
+    The outline for this was already completed for us.  We just had to fill in the TODO
+    sections.  Takes a lot of the challange and thinking out of the assignment.
+    I deleted all the instructor comments, they were cluttering up my screen.
+"""
 
 import socket
 import sys

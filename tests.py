@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-""" echo server tests """
 #pylint: disable=C0103
+""" echo server tests """
 import socket
 import unittest
 from time import sleep
 from echo_client import client
-
-
 
 
 class EchoTestCase(unittest.TestCase):

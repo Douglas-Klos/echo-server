@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#pylint: disable=W1401
 """ Prints the services associated with specified port range """
 
 from socket import getservbyport
@@ -15,7 +16,17 @@ def servicve_by_port(start, end):
 
 
 def main():
-    """ Main is main """
+    """
+       _____      _____  .___ _______
+      /     \    /  _  \ |   |\      \
+     /  \ /  \  /  /_\  \|   |/   |   \
+    /    Y    \/    |    \   /    |    \
+    \____|__  /\____|__  /___\____|__  /
+            \/         \/            \/
+    """
+
+    # Thought I'd try a different approach for input checking...
+    #   Try to throw an error, if you can't, things must have been OK.
     try:
         start = int(sys.argv[1])
         end = int(sys.argv[2])

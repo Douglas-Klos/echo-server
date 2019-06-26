@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
+#pylint: disable=C0103
+"""
+    Full disclosure - While searching for info on select.select, an example
+    that kept coming up was an echo server.  This is basically that code, but I'm
+    going through line by line to understand what it is doing, and changings a few
+    things here and there.
+"""
 
 import select
 import socket
-import sys
 import queue
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

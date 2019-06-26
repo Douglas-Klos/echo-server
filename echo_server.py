@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#pylint: disable=W0703, R1702
+# pylint: disable=W0703, R1702
 """
     Echo server.  Awaits for connection, and replies with what it receives
     The outline for this was already completed for us.  We just had to fill in the TODO
@@ -15,7 +15,7 @@ import traceback
 def server(log_buffer=sys.stderr):
     """ Echo server """
 
-    server_address = ('127.0.0.1', 10000)
+    server_address = ("127.0.0.1", 10000)
     try:
         while True:
 
@@ -25,31 +25,31 @@ def server(log_buffer=sys.stderr):
             sock.bind(server_address)
             sock.listen(1)
 
-            print('waiting for a connection', file=log_buffer)
+            print("waiting for a connection", file=log_buffer)
             conn, addr = sock.accept()
 
             try:
-                print('connection - {0}:{1}'.format(*addr), file=log_buffer)
+                print(f"connection - {addr[0]}:{addr[1]}", file=log_buffer)
 
                 while True:
                     data = conn.recv(16)
                     if not data:
                         break
-                    print('received "{0}"'.format(data.decode('utf8')))
+                    print(f'received "{data.decode("""utf8""")}"')
 
                     conn.sendall(data)
-                    print('sent "{0}"'.format(data.decode('utf8')))
+                    print(f'sent "{data.decode("""utf8""")}"')
 
             except Exception:
                 traceback.print_exc()
                 sys.exit(1)
             finally:
                 sock.close()
-                print('echo complete, client connection closed', file=log_buffer)
+                print("echo complete, client connection closed", file=log_buffer)
 
     except KeyboardInterrupt:
         sock.close()
-        print('quitting echo server', file=log_buffer)
+        print("quitting echo server", file=log_buffer)
         sys.exit(0)
 
 
@@ -58,5 +58,6 @@ def main():
     server()
     sys.exit(0)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

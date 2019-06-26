@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-#pylint: disable=C0103
-
+# pylint: disable=C0103
 """
     Full disclosure - While searching for info on select.select, an example
     that kept coming up was an echo server.  This is basically that code, but I'm
@@ -11,13 +10,13 @@
 import socket
 
 messages = [
-    'This is the message. '.encode('utf8'),
-    'It will be sent '.encode('utf8'),
-    'in parts.'.encode('utf8'),
+    "This is the message. ".encode("utf8"),
+    "It will be sent ".encode("utf8"),
+    "in parts.".encode("utf8"),
 ]
 
 
-server_address = ('localhost', 10000)
+server_address = ("localhost", 10000)
 
 # Create a TCP/IP socket
 socks = [

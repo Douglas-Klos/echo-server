@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#pylint: disable=C0103
+# pylint: disable=C0103
 """
     Full disclosure - While searching for info on select.select, an example
     that kept coming up was an echo server.  This is basically that code, but I'm
@@ -14,7 +14,7 @@ import queue
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 server.setblocking(0)
-server.bind(('localhost', 10000))
+server.bind(("localhost", 10000))
 server.listen(5)
 inputs = [server]
 outputs = []

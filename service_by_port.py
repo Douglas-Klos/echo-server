@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#pylint: disable=W1401
+# pylint: disable=W1401
 """ Prints the services associated with specified port range """
 
 from socket import getservbyport

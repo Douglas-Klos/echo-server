@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#pylint: disable=C0103
+# pylint: disable=C0103
 """ echo server tests """
 import socket
 import unittest
@@ -27,26 +27,22 @@ class EchoTestCase(unittest.TestCase):
 
     def test_short_message_echo(self):
         """test that a message short than 16 bytes echoes cleanly"""
-        sleep(.01)
+        sleep(0.01)
         expected = "short message"
         actual = self.send_message(expected)
         self.assertEqual(
-            expected,
-            actual,
-            "expected {0}, got {1}".format(expected, actual)
+            expected, actual, "expected {0}, got {1}".format(expected, actual)
         )
 
     def test_long_message_echo(self):
         """test that a message longer than 16 bytes echoes in 16-byte chunks"""
-        sleep(.01)
+        sleep(0.01)
         expected = "Four score and seven years ago our fathers did stuff"
         actual = self.send_message(expected)
         self.assertEqual(
-            expected,
-            actual,
-            "expected {0}, got {1}".format(expected, actual)
+            expected, actual, "expected {0}, got {1}".format(expected, actual)
         )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

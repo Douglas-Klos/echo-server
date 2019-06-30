@@ -3,6 +3,10 @@
 * Completed required tasks (echo server and client)
 * Completed optional task, determine service by port.  I wrote a seperate script for this, service_by_port.py.  Accepts a start and end value from the cli as a range to scan. Simple really.
 
+I've had a lot less time these past two weeks to work on these assignments, Mother had
+surgery and I'm out of town taking care of her.  Thing should be returning to normal
+soon.
+
 Echo Server Homework
 ==================
 

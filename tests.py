@@ -37,7 +37,11 @@ class EchoTestCase(unittest.TestCase):
     def test_long_message_echo(self):
         """test that a message longer than 16 bytes echoes in 16-byte chunks"""
         sleep(0.01)
-        expected = "Four score and seven years ago our fathers did stuff"
+        expected = (
+            f"Four score and seven years ago our fathers brought forth on "
+            f"this continent, a new nation, conceived in Liberty, and "
+            f"dedicated to the proposition that all men are created equal."
+        )
         actual = self.send_message(expected)
         self.assertEqual(
             expected, actual, "expected {0}, got {1}".format(expected, actual)
